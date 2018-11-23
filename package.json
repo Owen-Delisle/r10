@@ -1,0 +1,38 @@
+{
+  "name": "r10",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.1.21",
+    "graphql": "^14.0.2",
+    "moment": "^2.22.2",
+    "react": "16.6.1",
+    "react-apollo": "^2.3.1",
+    "react-dom": "^16.6.3",
+    "react-native": "^0.57.5",
+    "react-native-gesture-handler": "^1.0.9",
+    "react-native-linear-gradient": "^2.4.4",
+    "react-native-vector-icons": "^6.1.0",
+    "react-navigation": "^3.0.0",
+    "realm": "^2.19.1"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "babel-plugin-graphql-tag": "^1.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.49.2",
+    "react-test-renderer": "16.6.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "js/assets/fonts"
+    ]
+  }
+}
