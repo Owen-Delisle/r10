@@ -47,7 +47,7 @@ export default class Session extends Component {
             <Button
               onPress={() => {
                 // addFave(this.props.session.id, new Date());
-                console.log(queryAllFaves());
+                addFave(this.props.session.id, new Date());
               }}
               title="Add to Faves"
               color="#841584"

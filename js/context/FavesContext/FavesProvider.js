@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import realm from "../../config/models";
+
 const FavesContext = React.createContext();
 class FavesProvider extends Component {
   constructor(props) {
@@ -25,8 +26,8 @@ class FavesProvider extends Component {
     this.setState({ faveIds: favs });
   }
 
-  async queryAllFaves() {
-    let favs = await realm.objects("Fave");
+  queryAllFaves() {
+    let favs = realm.objects("Fave").map(fav => fav.id);
     this.setState({ faveIds: favs });
   }
 
@@ -37,7 +38,8 @@ class FavesProvider extends Component {
           ...this.state,
           addFave: this.addFave.bind(this),
           removeFave: this.removeFave.bind(this),
-          queryAllFaves: this.queryAllFaves.bind(this)
+          queryAllFaves: this.queryAllFaves.bind(this),
+          faveIds: this.state.faveIds
         }}
       >
         {this.props.children}

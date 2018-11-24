@@ -3,6 +3,7 @@ import Schedule from "./Schedule";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { ActivityIndicator } from "react-native";
+import FavesContext from "../../context/FavesContext/FavesProvider";
 
 const GET_SESSIONS = gql`
   query {
@@ -29,14 +30,26 @@ class ScheduleContainer extends Component {
   };
   render() {
     return (
-      <Query query={GET_SESSIONS}>
-        {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
-          if (error) return `Error, ${error.message}`;
-          if (data)
-            return <Schedule data={data} navigation={this.props.navigation} />;
+      <FavesContext.Consumer>
+        {({ faveIds }) => {
+          return (
+            <Query query={GET_SESSIONS}>
+              {({ loading, error, data }) => {
+                if (loading) return <ActivityIndicator />;
+                if (error) return `Error, ${error.message}`;
+                if (data)
+                  return (
+                    <Schedule
+                      data={data}
+                      navigation={this.props.navigation}
+                      faveIds={faveIds}
+                    />
+                  );
+              }}
+            </Query>
+          );
         }}
-      </Query>
+      </FavesContext.Consumer>
     );
   }
 }

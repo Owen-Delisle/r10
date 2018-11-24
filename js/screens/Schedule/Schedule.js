@@ -8,6 +8,7 @@ import {
   SectionList
 } from "react-native";
 import moment from "moment";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default class Schedule extends Component {
   constructor() {
@@ -44,6 +45,9 @@ export default class Schedule extends Component {
         <View>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.location}>{item.location}</Text>
+          {this.props.faveIds.includes(item.id) && (
+            <Ionicons name={"ios-heart"} size={10} color={"red"} />
+          )}
           <View style={styles.separator} />
         </View>
       </TouchableOpacity>
