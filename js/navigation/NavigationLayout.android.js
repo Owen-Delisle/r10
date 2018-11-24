@@ -23,16 +23,16 @@ const AboutStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation),
       drawerLabel: "About",
-      headerLeft: () => {
-        <TouchableOpacity>
+      headerLeft: () => (
+        <TouchableOpacity onPress={() => navigation.toggleDrawer("About")}>
           <Ionicons
             name={"md-menu"}
             size={25}
             color={"white"}
             style={{ marginLeft: 20 }}
           />
-        </TouchableOpacity>;
-      }
+        </TouchableOpacity>
+      )
     })
   }
 );

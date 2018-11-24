@@ -10,4 +10,4 @@ const AppNavigator = createStackNavigator(
   { headerMode: "none" }
 );
 
-export default createAppContainer(Stack);
+export default createAppContainer(AppNavigator);
