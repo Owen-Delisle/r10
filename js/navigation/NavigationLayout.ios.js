@@ -88,12 +88,7 @@ export default createBottomTabNavigator(
         } else if (routeName === "Map") {
           iconName = `ios-map`;
         } else if (routeName === "Favs") {
-          {
-            Platform.OS === "ios" && (iconName = "ios-heart");
-          }
-          {
-            Platform.Version === "android" && (iconName = "md-heart");
-          }
+          iconName = "ios-heart";
         }
 
         //favs is heart
