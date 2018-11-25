@@ -15,7 +15,8 @@ const GET_CONDUCT = gql`
 
 class AboutContainer extends Component {
   static navigationOptions = {
-    title: "About"
+    title: "About",
+    headerTintColor: "white"
   };
   render() {
     return (

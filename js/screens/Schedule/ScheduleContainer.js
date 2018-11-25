@@ -26,7 +26,8 @@ class ScheduleContainer extends Component {
     super();
   }
   static navigationOptions = {
-    title: "Schedule"
+    title: "Schedule",
+    headerTintColor: "white"
   };
   render() {
     return (
