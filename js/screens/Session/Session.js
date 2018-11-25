@@ -5,11 +5,13 @@ import {
   Image,
   Button,
   TouchableOpacity,
-  Modal
+  Modal,
+  StyleSheet
 } from "react-native";
 import styles from "../../config/styles";
 import FavesContext from "../../context/FavesContext/FavesProvider";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import LinearGradient from "react-native-linear-gradient";
 
 export default class Session extends Component {
   constructor() {
@@ -26,7 +28,7 @@ export default class Session extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.mainContainer}>
         <Text style={styles.smallGrey}>{this.props.session.location}</Text>
         <Text style={styles.primaryTitle}>{this.props.session.title}</Text>
         <Text style={styles.time}>{this.props.session.startTime}</Text>
@@ -45,15 +47,35 @@ export default class Session extends Component {
         </TouchableOpacity>
         <FavesContext.Consumer>
           {({ addFave, removeFave, queryAllFaves, faveIds }) => (
-            <Button
-              onPress={() => {
-                // addFave(this.props.session.id, new Date());
-                addFave(this.props.session.id, new Date());
-              }}
-              title="Add to Faves"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            // <Button
+            //   onPress={() => {
+            //     // addFave(this.props.session.id, new Date());
+            //     addFave(this.props.session.id, new Date());
+            //   }}
+            //   backgroundColor="red"
+            //   title="Add to Faves"
+            //   color="#841584"
+            //   accessibilityLabel="Learn more about this purple button"
+            // />
+            <View style={styles.addFaveButtonContainer}>
+              <LinearGradient
+                colors={["#B01EFF", "#3672F8"]}
+                start={{ x: 0.0, y: 1.0 }}
+                end={{ x: 1.0, y: 0.0 }}
+                style={[
+                  StyleSheet.absoluteFill,
+                  {
+                    height: 50,
+                    width: 200,
+                    borderRadius: 30,
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }
+                ]}
+              >
+                <Text style={styles.buttonText}>Add fave</Text>
+              </LinearGradient>
+            </View>
           )}
         </FavesContext.Consumer>
 
@@ -75,13 +97,16 @@ export default class Session extends Component {
               <Text style={styles.modalTitle}>About the Speaker</Text>
             </View>
             <View style={styles.speakerContainer}>
-              <Text style={styles.primaryTitle}>
-                {this.props.session.speaker.name}
-              </Text>
               <Image
                 style={styles.image}
                 source={{ uri: this.props.session.speaker.image }}
               />
+              <Text style={styles.primaryTitle}>
+                {this.props.session.speaker.name}
+              </Text>
+              <Text style={styles.descriptionText}>
+                {this.props.session.speaker.bio}
+              </Text>
             </View>
           </View>
         </Modal>

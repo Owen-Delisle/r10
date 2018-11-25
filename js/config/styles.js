@@ -32,6 +32,10 @@ export default StyleSheet.create({
     backgroundColor: "purple",
     color: "white"
   },
+  buttonText: {
+    color: "white",
+    fontSize: 30
+  },
   accordianTitle: {
     color: "purple",
     fontSize: 20,
@@ -77,6 +81,16 @@ export default StyleSheet.create({
     backgroundColor: "white",
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width - 50,
-    borderRadius: 10
+    borderRadius: 10,
+    // justifyContent: "center",
+    alignItems: "center",
+    padding: 10
+  },
+  addFaveButtonContainer: {
+    height: 64,
+    width: 400
+  },
+  mainContainer: {
+    padding: 30
   }
 });

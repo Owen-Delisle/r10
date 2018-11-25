@@ -14,6 +14,7 @@ const GET_SESSIONS = gql`
       speaker {
         name
         image
+        bio
       }
       startTime
       title
