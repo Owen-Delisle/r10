@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, SectionList } from "react-native";
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import styles from "../../config/faves-schedule-styles";
 
 export default class Favs extends Component {
   constructor() {
@@ -30,7 +31,9 @@ export default class Favs extends Component {
       <View>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.location}>{item.location}</Text>
-        <Ionicons name={"ios-heart"} size={10} color={"red"} />
+        <View style={styles.heartContainer}>
+          <Ionicons name={"ios-heart"} size={20} color={"red"} />
+        </View>
         <View style={styles.separator} />
       </View>
     );
@@ -41,7 +44,7 @@ export default class Favs extends Component {
       <SectionList
         renderItem={this._renderItem}
         renderSectionHeader={({ section }) => (
-          <Text style={{ fontWeight: "bold", backgroundColor: "lightgrey" }}>
+          <Text style={styles.time}>
             {moment(section.title).format("h:mm a")}
           </Text>
         )}
@@ -51,10 +54,3 @@ export default class Favs extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  view: {
-    justifyContent: "center",
-    alignItems: "center"
-  }
-});

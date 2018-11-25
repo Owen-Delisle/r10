@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import styles from "../../config/faves-schedule-styles";
 
 export default class Schedule extends Component {
   constructor() {
@@ -71,30 +72,30 @@ export default class Schedule extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  view: {
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  title: {
-    paddingTop: 10,
-    fontWeight: "bold"
-  },
-  time: {
-    backgroundColor: "lightgrey",
-    fontWeight: "bold"
-  },
-  location: {
-    paddingTop: 10,
-    color: "grey"
-  },
-  separator: {
-    paddingTop: 30,
-    borderBottomColor: "lightgrey",
-    borderBottomWidth: 0.8
-  },
-  heartContainer: {
-    alignSelf: "flex-end",
-    paddingRight: 20
-  }
-});
+// const styles = StyleSheet.create({
+//   view: {
+//     justifyContent: "center",
+//     alignItems: "center"
+//   },
+//   title: {
+//     paddingTop: 10,
+//     fontWeight: "bold"
+//   },
+//   time: {
+//     backgroundColor: "lightgrey",
+//     fontWeight: "bold"
+//   },
+//   location: {
+//     paddingTop: 10,
+//     color: "grey"
+//   },
+//   separator: {
+//     paddingTop: 30,
+//     borderBottomColor: "lightgrey",
+//     borderBottomWidth: 0.8
+//   },
+//   heartContainer: {
+//     alignSelf: "flex-end",
+//     paddingRight: 20
+//   }
+// });
