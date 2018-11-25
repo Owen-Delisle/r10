@@ -67,21 +67,21 @@ export default class Session extends Component {
         >
           <View style={styles.modalContainer}>
             <View style={styles.modalTitleContainer}>
-              <Ionicons name={"ios-close"} size={40} color={"white"} />
-              <Text style={styles.modalTitle}>About the Speaker</Text>
-            </View>
-            <View style={styles.speakerContainer}>
               <TouchableOpacity
                 onPress={() => this.setModalVisible(!this.state.modalVisible)}
               >
-                <Text style={styles.primaryTitle}>
-                  {this.props.session.speaker.name}
-                </Text>
-                <Image
-                  style={styles.image}
-                  source={{ uri: this.props.session.speaker.image }}
-                />
+                <Ionicons name={"ios-close"} size={40} color={"white"} />
               </TouchableOpacity>
+              <Text style={styles.modalTitle}>About the Speaker</Text>
+            </View>
+            <View style={styles.speakerContainer}>
+              <Text style={styles.primaryTitle}>
+                {this.props.session.speaker.name}
+              </Text>
+              <Image
+                style={styles.image}
+                source={{ uri: this.props.session.speaker.image }}
+              />
             </View>
           </View>
         </Modal>
