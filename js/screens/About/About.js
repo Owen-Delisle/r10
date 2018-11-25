@@ -11,7 +11,7 @@ export default class About extends Component {
   _renderHeader = section => {
     return (
       <View>
-        <Text style={styles.accordianTitle}>+{section.title}</Text>
+        <Text style={styles.accordianTitle}>+ {section.title}</Text>
       </View>
     );
   };
