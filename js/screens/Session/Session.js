@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import styles from "../../config/styles";
 import FavesContext from "../../context/FavesContext/FavesProvider";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default class Session extends Component {
   constructor() {
@@ -55,30 +56,36 @@ export default class Session extends Component {
             />
           )}
         </FavesContext.Consumer>
+
         <Modal
-          animationType="slide"
+          animationType="fade"
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose={() => {
             Alert.alert("Modal has been closed.");
           }}
         >
-          <View>
-            <TouchableOpacity
-              onPress={() => this.setModalVisible(!this.state.modalVisible)}
-            >
-              <Text style={styles.primaryTitle}>
-                {this.props.session.speaker.name}
-              </Text>
-              <Image
-                style={styles.image}
-                source={{ uri: this.props.session.speaker.image }}
-              />
-            </TouchableOpacity>
+          <View style={styles.modalContainer}>
+            <View style={styles.modalTitleContainer}>
+              <Ionicons name={"ios-close"} size={40} color={"white"} />
+              <Text style={styles.modalTitle}>About the Speaker</Text>
+            </View>
+            <View style={styles.speakerContainer}>
+              <TouchableOpacity
+                onPress={() => this.setModalVisible(!this.state.modalVisible)}
+              >
+                <Text style={styles.primaryTitle}>
+                  {this.props.session.speaker.name}
+                </Text>
+                <Image
+                  style={styles.image}
+                  source={{ uri: this.props.session.speaker.image }}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
         </Modal>
       </View>
     );
   }
 }
-Session.contextType = FavesContext;

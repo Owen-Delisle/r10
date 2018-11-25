@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 export default StyleSheet.create({
   view: {
@@ -49,5 +49,34 @@ export default StyleSheet.create({
   imageContainer: {
     justifyContent: "center",
     alignItems: "center"
+  },
+  modalContainer: {
+    backgroundColor: "black",
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width,
+    alignItems: "center",
+    paddingTop: 30
+  },
+  modalTitleContainer: {
+    width: Dimensions.get("window").width - 50,
+    height: 100
+  },
+  modalTitle: {
+    fontSize: 20,
+    color: "white",
+    marginBottom: 20,
+    fontWeight: "bold",
+    alignSelf: "center",
+    flex: 10
+  },
+
+  modaClose: {
+    flex: 1
+  },
+  speakerContainer: {
+    backgroundColor: "white",
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width - 50,
+    borderRadius: 10
   }
 });
