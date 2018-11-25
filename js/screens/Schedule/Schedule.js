@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import FavesContext from "../../context/FavesContext/FavesProvider";
 import {
   StyleSheet,
   Text,

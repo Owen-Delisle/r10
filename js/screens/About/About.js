@@ -1,26 +1,7 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  FlatList,
-  TouchableOpacity
-} from "react-native";
+import { Text, View, Image, ScrollView } from "react-native";
 import Accordion from "react-native-collapsible/Accordion";
 import styles from "../../config/styles";
-
-const SECTIONS = [
-  {
-    title: "First",
-    content: "Lorem ipsum..."
-  },
-  {
-    title: "Second",
-    content: "Lorem ipsum..."
-  }
-];
 
 export default class About extends Component {
   state = {
@@ -37,7 +18,7 @@ export default class About extends Component {
 
   _renderContent = section => {
     return (
-      <View style={styles.descriptionText}>
+      <View>
         <Text>{section.description}</Text>
       </View>
     );
@@ -50,10 +31,12 @@ export default class About extends Component {
   render() {
     return (
       <ScrollView style={styles.view}>
-        <Image
-          style={styles.aboutImage}
-          source={require("../../assets/images/r10_logo.png")}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            // style={styles.aboutImage}
+            source={require("../../assets/images/r10_logo.png")}
+          />
+        </View>
         <View style={styles.separator} />
         <Text style={styles.descriptionText}>
           R10 is a conference that focuses on just about any topic related to
@@ -73,6 +56,8 @@ export default class About extends Component {
           renderContent={this._renderContent}
           onChange={this._updateSections}
         />
+        <View style={styles.separator} />
+        <Text style={styles.descriptionText}>{"\u00A9"} RED Academy 2017</Text>
       </ScrollView>
     );
   }

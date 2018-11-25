@@ -10,7 +10,8 @@ export default StyleSheet.create({
   },
   primaryTitle: {
     fontWeight: "bold",
-    fontSize: 20
+    fontSize: 20,
+    padding: 10
   },
   secondaryTitle: {
     fontWeight: "bold",
@@ -45,7 +46,8 @@ export default StyleSheet.create({
     padding: 10,
     fontSize: 15
   },
-  aboutImage: {
+  imageContainer: {
+    justifyContent: "center",
     alignItems: "center"
   }
 });
