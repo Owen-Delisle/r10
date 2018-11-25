@@ -32,10 +32,7 @@ export default class About extends Component {
     return (
       <ScrollView style={styles.view}>
         <View style={styles.imageContainer}>
-          <Image
-            // style={styles.aboutImage}
-            source={require("../../assets/images/r10_logo.png")}
-          />
+          <Image source={require("../../assets/images/r10_logo.png")} />
         </View>
         <View style={styles.separator} />
         <Text style={styles.descriptionText}>
@@ -62,30 +59,3 @@ export default class About extends Component {
     );
   }
 }
-
-// <View style={styles.view}>
-//   <Image
-//     style={styles.img}
-//     source={require("../../assets/images/r10_logo.png")}
-//   />
-//   {/* <View style={styles.separator} /> */}
-//   <View>
-//     {/* <FlatList
-//       data={this.props.data.allConducts}
-//       renderItem={({ item, index }) => (
-//         <View>
-//           <TouchableOpacity
-//             onPress={this.setState({ visibleIndex: index })}
-//           >
-//             <Text style={styles.title}>
-//               {item.title}
-//               {console.log(item.index)}
-//             </Text>
-//           </TouchableOpacity>
-//           <Text>{item.description}</Text>
-//         </View>
-//       )}
-//     /> */}
-
-//   </View>
-// </View>

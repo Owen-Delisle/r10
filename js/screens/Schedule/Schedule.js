@@ -45,7 +45,9 @@ export default class Schedule extends Component {
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.location}>{item.location}</Text>
           {this.props.faveIds.includes(item.id) && (
-            <Ionicons name={"ios-heart"} size={10} color={"red"} />
+            <View style={styles.heartContainer}>
+              <Ionicons name={"ios-heart"} size={20} color={"red"} />
+            </View>
           )}
           <View style={styles.separator} />
         </View>
@@ -58,7 +60,7 @@ export default class Schedule extends Component {
       <SectionList
         renderItem={this._renderItem}
         renderSectionHeader={({ section }) => (
-          <Text style={{ fontWeight: "bold", backgroundColor: "lightgrey" }}>
+          <Text style={styles.time}>
             {moment(section.title).format("h:mm a")}
           </Text>
         )}
@@ -75,18 +77,24 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   title: {
-    alignItems: "center",
+    paddingTop: 10,
     fontWeight: "bold"
   },
   time: {
-    backgroundColor: "lightgrey"
+    backgroundColor: "lightgrey",
+    fontWeight: "bold"
   },
   location: {
+    paddingTop: 10,
     color: "grey"
   },
   separator: {
     paddingTop: 30,
     borderBottomColor: "lightgrey",
     borderBottomWidth: 0.8
+  },
+  heartContainer: {
+    alignSelf: "flex-end",
+    paddingRight: 20
   }
 });
