@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  view: {
+    padding: 10
+  },
   smallGrey: {
     color: "grey",
     fontSize: 15
@@ -27,5 +30,22 @@ export default StyleSheet.create({
   faveButton: {
     backgroundColor: "purple",
     color: "white"
+  },
+  accordianTitle: {
+    color: "purple",
+    fontSize: 20,
+    padding: 10
+  },
+  separator: {
+    borderBottomColor: "black",
+    borderBottomWidth: 1,
+    padding: 10
+  },
+  descriptionText: {
+    padding: 10,
+    fontSize: 15
+  },
+  aboutImage: {
+    alignItems: "center"
   }
 });

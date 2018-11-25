@@ -36,7 +36,7 @@ class ScheduleContainer extends Component {
             <Query query={GET_SESSIONS}>
               {({ loading, error, data }) => {
                 if (loading) return <ActivityIndicator />;
-                if (error) return `Error, ${error.message}`;
+                if (error) return <Text>`Error, ${error.message}`</Text>;
                 if (data)
                   return (
                     <Schedule
