@@ -98,7 +98,7 @@ export default StyleSheet.create({
     paddingTop: 20,
     justifyContent: "flex-end",
     alignSelf: "center",
-    paddingBottom: 110
+    paddingBottom: 140
   },
   mainContainer: {
     alignItems: "flex-start",

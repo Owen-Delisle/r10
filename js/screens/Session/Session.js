@@ -94,7 +94,6 @@ export default class Session extends Component {
               {faveIds.includes(this.props.session.id) && (
                 <TouchableOpacity
                   onPress={() => {
-                    console.log(this.props.session.id);
                     removeFave(this.props.session.id);
                     queryAllFaves();
                   }}
