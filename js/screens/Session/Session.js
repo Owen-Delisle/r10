@@ -3,7 +3,6 @@ import {
   Text,
   View,
   Image,
-  Button,
   TouchableOpacity,
   Modal,
   StyleSheet,
@@ -50,17 +49,19 @@ export default class Session extends Component {
             </Text>
             <Text style={styles.body}>{this.props.session.description}</Text>
             <Text style={styles.smallGrey}>Presented by:</Text>
-            <TouchableOpacity
-              onPress={() => this.setModalVisible(!this.state.modalVisible)}
-            >
-              <Text style={styles.primaryTitle}>
-                {this.props.session.speaker.name}
-              </Text>
-              <Image
-                style={styles.image}
-                source={{ uri: this.props.session.speaker.image }}
-              />
-            </TouchableOpacity>
+            <View style={styles.rowContainer}>
+              <TouchableOpacity
+                onPress={() => this.setModalVisible(!this.state.modalVisible)}
+              >
+                <Image
+                  style={styles.image}
+                  source={{ uri: this.props.session.speaker.image }}
+                />
+                <Text style={styles.primaryTitle}>
+                  {this.props.session.speaker.name}
+                </Text>
+              </TouchableOpacity>
+            </View>
 
             <View style={styles.addFaveButtonContainer}>
               {!faveIds.includes(this.props.session.id) && (
@@ -81,7 +82,8 @@ export default class Session extends Component {
                         width: 200,
                         borderRadius: 30,
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                        alignSelf: "center"
                       }
                     ]}
                   >

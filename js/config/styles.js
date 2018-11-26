@@ -88,14 +88,17 @@ export default StyleSheet.create({
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width - 50,
     borderRadius: 10,
-    // justifyContent: "center",
     alignItems: "center",
     padding: 10
   },
   addFaveButtonContainer: {
     height: 64,
-    width: 400,
-    paddingTop: 20
+    width: "55%",
+    height: "30%",
+    paddingTop: 20,
+    justifyContent: "flex-end",
+    alignSelf: "center",
+    paddingBottom: 110
   },
   mainContainer: {
     alignItems: "flex-start",

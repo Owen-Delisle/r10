@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  SectionList
-} from "react-native";
+import { Text, View, TouchableOpacity, SectionList } from "react-native";
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "../../config/faves-schedule-styles";
@@ -41,7 +35,6 @@ export default class Schedule extends Component {
   };
 
   _renderItem = ({ item }) => {
-    // console.log(item);
     return (
       <TouchableOpacity onPress={() => this.onPress(item)}>
         <View>
@@ -85,31 +78,3 @@ Schedule.propTypes = {
   image: PropTypes.string,
   bio: PropTypes.string
 };
-
-// const styles = StyleSheet.create({
-//   view: {
-//     justifyContent: "center",
-//     alignItems: "center"
-//   },
-//   title: {
-//     paddingTop: 10,
-//     fontWeight: "bold"
-//   },
-//   time: {
-//     backgroundColor: "lightgrey",
-//     fontWeight: "bold"
-//   },
-//   location: {
-//     paddingTop: 10,
-//     color: "grey"
-//   },
-//   separator: {
-//     paddingTop: 30,
-//     borderBottomColor: "lightgrey",
-//     borderBottomWidth: 0.8
-//   },
-//   heartContainer: {
-//     alignSelf: "flex-end",
-//     paddingRight: 20
-//   }
-// });

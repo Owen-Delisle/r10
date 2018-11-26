@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, SectionList } from "react-native";
+import { Text, View, SectionList } from "react-native";
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "../../config/faves-schedule-styles";
@@ -27,7 +27,6 @@ export default class Favs extends Component {
   }
 
   _renderItem = ({ item }) => {
-    // console.log(item);
     return (
       <View>
         <Text style={styles.title}>{item.title}</Text>

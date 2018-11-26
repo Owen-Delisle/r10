@@ -1,7 +1,5 @@
 import React from "react";
 
-// import Platform from "react-native";
-
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 
 import AboutScreen from "../screens/About";
@@ -13,7 +11,7 @@ import SessionScreen from "../screens/Session";
 import { sharedNavigationOptions } from "./config";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { Platform, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 const AboutStack = createStackNavigator(
   {

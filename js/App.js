@@ -8,7 +8,6 @@
 
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-// import About from "./screens/About/About";
 import client from "./config/api";
 import { ApolloProvider } from "react-apollo";
 import { FavesProvider } from "./context/FavesContext";
@@ -29,7 +28,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
     paddingTop: 50,
     alignItems: "center",
     backgroundColor: "#F5FCFF"

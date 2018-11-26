@@ -1,7 +1,5 @@
 import React from "react";
 
-// import Platform from "react-native";
-
 import {
   createStackNavigator,
   createBottomTabNavigator
@@ -16,7 +14,6 @@ import SessionScreen from "../screens/Session";
 import { sharedNavigationOptions } from "./config";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { Platform } from "react-native";
 
 const AboutStack = createStackNavigator(
   {
@@ -42,10 +39,6 @@ const ScheduleStack = createStackNavigator(
   }
 );
 
-// const SessionStack = createStackNavigator({
-//   Session: SessionScreen
-// });
-
 const FavsStack = createStackNavigator(
   {
     Favs: FavsScreen
@@ -68,7 +61,6 @@ const MapStack = createStackNavigator(
   }
 );
 
-// Dedicated stacks for Schedule and Faves will go here too!
 export default createBottomTabNavigator(
   {
     About: AboutStack,
@@ -91,11 +83,6 @@ export default createBottomTabNavigator(
           iconName = "ios-heart";
         }
 
-        //favs is heart
-        //map is map
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
         return (
           <Ionicons
             name={iconName}

@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { Header } from "react-navigation";
 import LinearGradient from "react-native-linear-gradient";
-// ...more to come here!
 
 const GradientHeader = props => (
   <View style={{ backgroundColor: "white", overflow: "hidden" }}>
