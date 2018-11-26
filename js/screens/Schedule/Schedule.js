@@ -33,17 +33,16 @@ export default class Schedule extends Component {
     this.setState({ data: data });
   }
 
-  onPress = (item, ids) => {
+  onPress = item => {
     this.props.navigation.navigate("Session", {
-      session: item,
-      faveIds: ids
+      session: item
     });
   };
 
   _renderItem = ({ item }) => {
     // console.log(item);
     return (
-      <TouchableOpacity onPress={() => this.onPress(item, this.props.faveIds)}>
+      <TouchableOpacity onPress={() => this.onPress(item)}>
         <View>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.location}>{item.location}</Text>

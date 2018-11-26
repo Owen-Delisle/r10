@@ -16,8 +16,8 @@ import LinearGradient from "react-native-linear-gradient";
 import moment from "moment";
 
 export default class Session extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       modalVisible: false,
       isFavorite: false
@@ -35,7 +35,7 @@ export default class Session extends Component {
   render() {
     return (
       <FavesContext.Consumer>
-        {({ addFave, removeFave, faveIds }) => (
+        {({ addFave, removeFave, faveIds, queryAllFaves }) => (
           <View style={styles.mainContainer}>
             {faveIds.includes(this.props.session.id) && (
               <View style={styles.heartContainer}>
@@ -66,6 +66,7 @@ export default class Session extends Component {
                 <TouchableOpacity
                   onPress={() => {
                     addFave(this.props.session.id, new Date());
+                    queryAllFaves();
                   }}
                 >
                   <LinearGradient
@@ -92,6 +93,7 @@ export default class Session extends Component {
                   onPress={() => {
                     console.log(this.props.session.id);
                     removeFave(this.props.session.id);
+                    queryAllFaves();
                   }}
                 >
                   <LinearGradient
