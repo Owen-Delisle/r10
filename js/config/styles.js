@@ -6,22 +6,26 @@ export default StyleSheet.create({
   },
   smallGrey: {
     color: "grey",
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 20
   },
   primaryTitle: {
     fontWeight: "bold",
     fontSize: 20,
-    padding: 10
+    paddingTop: 20
   },
   secondaryTitle: {
     fontWeight: "bold",
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 20
   },
   body: {
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 20
   },
   time: {
-    color: "red"
+    color: "red",
+    paddingTop: 20
   },
   image: {
     width: 100,
@@ -30,7 +34,8 @@ export default StyleSheet.create({
   },
   faveButton: {
     backgroundColor: "purple",
-    color: "white"
+    color: "white",
+    paddingTop: 20
   },
   buttonText: {
     color: "white",
@@ -89,10 +94,12 @@ export default StyleSheet.create({
   },
   addFaveButtonContainer: {
     height: 64,
-    width: 400
+    width: 400,
+    paddingTop: 20
   },
   mainContainer: {
-    padding: 30
+    alignItems: "flex-start",
+    padding: 20
   },
   heartContainer: {
     alignSelf: "flex-end"

@@ -13,12 +13,14 @@ import styles from "../../config/styles";
 import FavesContext from "../../context/FavesContext/FavesProvider";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import LinearGradient from "react-native-linear-gradient";
+import moment from "moment";
 
 export default class Session extends Component {
   constructor() {
     super();
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      isFavorite: false
     };
   }
 
@@ -26,10 +28,14 @@ export default class Session extends Component {
     this.setState({ modalVisible: visible });
   }
 
+  setIsFavorite() {
+    this.setState({ isFavorite: !this.state.isFavorite });
+  }
+
   render() {
     return (
       <FavesContext.Consumer>
-        {({ addFave, removeFave, queryAllFaves, faveIds }) => (
+        {({ addFave, removeFave, faveIds }) => (
           <View style={styles.mainContainer}>
             {faveIds.includes(this.props.session.id) && (
               <View style={styles.heartContainer}>
@@ -38,7 +44,9 @@ export default class Session extends Component {
             )}
             <Text style={styles.smallGrey}>{this.props.session.location}</Text>
             <Text style={styles.primaryTitle}>{this.props.session.title}</Text>
-            <Text style={styles.time}>{this.props.session.startTime}</Text>
+            <Text style={styles.time}>
+              {moment(this.props.session.startTime).format("h:mm a")}
+            </Text>
             <Text style={styles.body}>{this.props.session.description}</Text>
             <Text style={styles.smallGrey}>Presented by:</Text>
             <TouchableOpacity
@@ -75,7 +83,7 @@ export default class Session extends Component {
                       }
                     ]}
                   >
-                    <Text style={styles.buttonText}>Add fave</Text>
+                    <Text style={styles.buttonText}>Add to faves</Text>
                   </LinearGradient>
                 </TouchableOpacity>
               )}
