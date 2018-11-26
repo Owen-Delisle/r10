@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: "white",
-    fontSize: 30
+    fontSize: 25
   },
   accordianTitle: {
     color: "purple",
@@ -48,7 +48,8 @@ export default StyleSheet.create({
   },
   descriptionText: {
     padding: 10,
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 30
   },
   imageContainer: {
     justifyContent: "center",
@@ -74,7 +75,7 @@ export default StyleSheet.create({
     flex: 10
   },
 
-  modaClose: {
+  modalClose: {
     flex: 1
   },
   speakerContainer: {
@@ -92,5 +93,11 @@ export default StyleSheet.create({
   },
   mainContainer: {
     padding: 30
+  },
+  heartContainer: {
+    alignSelf: "flex-end"
+  },
+  wikiButton: {
+    alignSelf: "flex-start"
   }
 });

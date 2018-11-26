@@ -15,6 +15,7 @@ const GET_SESSIONS = gql`
         name
         image
         bio
+        url
       }
       startTime
       title

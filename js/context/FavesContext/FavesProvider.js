@@ -21,9 +21,9 @@ class FavesProvider extends Component {
   }
 
   removeFave(id) {
-    realm.delete("Faves", { id: id });
-    let favs = realm.objects("Faves");
-    this.setState({ faveIds: favs });
+    realm.write(() => {
+      realm.delete(realm.objectForPrimaryKey("Fave", id));
+    });
   }
 
   queryAllFaves() {

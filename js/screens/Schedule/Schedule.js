@@ -14,7 +14,6 @@ export default class Schedule extends Component {
   constructor() {
     super();
     this.data = [];
-    this.testDate = "2018-12-08T17:00:00.000Z";
     this.state = {
       loading: false,
       data: []
@@ -34,14 +33,17 @@ export default class Schedule extends Component {
     this.setState({ data: data });
   }
 
-  onPress = item => {
-    this.props.navigation.navigate("Session", { session: item });
+  onPress = (item, ids) => {
+    this.props.navigation.navigate("Session", {
+      session: item,
+      faveIds: ids
+    });
   };
 
   _renderItem = ({ item }) => {
     // console.log(item);
     return (
-      <TouchableOpacity onPress={() => this.onPress(item)}>
+      <TouchableOpacity onPress={() => this.onPress(item, this.props.faveIds)}>
         <View>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.location}>{item.location}</Text>
