@@ -14,10 +14,11 @@ import FavesContext from "../../context/FavesContext/FavesProvider";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import LinearGradient from "react-native-linear-gradient";
 import moment from "moment";
+import PropTypes from "prop-types";
 
 export default class Session extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       modalVisible: false,
       isFavorite: false
@@ -183,3 +184,15 @@ export default class Session extends Component {
     );
   }
 }
+
+Session.propTypes = {
+  id: PropTypes.string,
+  description: PropTypes.string,
+  location: PropTypes.string,
+  startTime: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  bio: PropTypes.string
+};

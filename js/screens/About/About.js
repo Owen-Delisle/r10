@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View, Image, ScrollView } from "react-native";
 import Accordion from "react-native-collapsible/Accordion";
 import styles from "../../config/styles";
+import PropTypes from "prop-types";
 
 export default class About extends Component {
   state = {
@@ -59,3 +60,15 @@ export default class About extends Component {
     );
   }
 }
+
+About.propTypes = {
+  id: PropTypes.string,
+  description: PropTypes.string,
+  location: PropTypes.string,
+  startTime: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  bio: PropTypes.string
+};

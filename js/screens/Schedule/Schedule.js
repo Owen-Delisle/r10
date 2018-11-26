@@ -9,6 +9,7 @@ import {
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "../../config/faves-schedule-styles";
+import PropTypes from "prop-types";
 
 export default class Schedule extends Component {
   constructor() {
@@ -72,6 +73,18 @@ export default class Schedule extends Component {
     );
   }
 }
+
+Schedule.propTypes = {
+  id: PropTypes.string,
+  description: PropTypes.string,
+  location: PropTypes.string,
+  startTime: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  bio: PropTypes.string
+};
 
 // const styles = StyleSheet.create({
 //   view: {
