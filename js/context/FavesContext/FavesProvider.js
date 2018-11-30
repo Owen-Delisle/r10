@@ -10,25 +10,25 @@ class FavesProvider extends Component {
     };
   }
 
-  componentDidMount() {
-    this.queryAllFaves();
+  async componentDidMount() {
+    await this.queryAllFaves();
   }
 
-  addFave(id, date) {
-    realm.write(() => {
+  async addFave(id, date) {
+    await realm.write(() => {
       realm.create("Fave", { id: id, faved_on: date });
     });
   }
 
-  removeFave(id) {
-    realm.write(() => {
+  async removeFave(id) {
+    await realm.write(() => {
       realm.delete(realm.objectForPrimaryKey("Fave", id));
     });
   }
 
-  queryAllFaves() {
+  async queryAllFaves() {
     let favs = realm.objects("Fave").map(fav => fav.id);
-    this.setState({ faveIds: favs });
+    await this.setState({ faveIds: favs });
   }
 
   render() {

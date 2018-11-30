@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Linking
 } from "react-native";
-import styles from "../../config/styles";
+import styles from "./styles";
 import FavesContext from "../../context/FavesContext/FavesProvider";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import LinearGradient from "react-native-linear-gradient";

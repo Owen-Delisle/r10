@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, Image, ScrollView } from "react-native";
-import Accordion from "react-native-collapsible/Accordion";
-import styles from "../../config/styles";
+import Accordion from "../../components/Accordion/Accordion";
+import styles from "./styles";
 import PropTypes from "prop-types";
 
 export default class About extends Component {
@@ -30,6 +30,7 @@ export default class About extends Component {
   };
 
   render() {
+    console.log(this.props.data.allConducts);
     return (
       <ScrollView style={styles.view}>
         <View style={styles.imageContainer}>
@@ -46,14 +47,7 @@ export default class About extends Component {
           Vancouver, BC
         </Text>
         <Text style={styles.primaryTitle}>Code of Conduct</Text>
-        <Accordion
-          sections={this.props.data.allConducts}
-          activeSections={this.state.activeSections}
-          renderSectionTitle={this._renderSectionTitle}
-          renderHeader={this._renderHeader}
-          renderContent={this._renderContent}
-          onChange={this._updateSections}
-        />
+        <Accordion data={this.props.data.allConducts} />
         <View style={styles.separator} />
         <Text style={styles.descriptionText}>{"\u00A9"} RED Academy 2017</Text>
       </ScrollView>

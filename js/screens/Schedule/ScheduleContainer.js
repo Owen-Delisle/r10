@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { ActivityIndicator } from "react-native";
 import FavesContext from "../../context/FavesContext/FavesProvider";
+import { formatSessionData } from "../../lib/helpers";
 
 const GET_SESSIONS = gql`
   query {
@@ -43,7 +44,7 @@ class ScheduleContainer extends Component {
                 if (data)
                   return (
                     <Schedule
-                      data={data}
+                      data={formatSessionData(data.allSessions)}
                       navigation={this.props.navigation}
                       faveIds={faveIds}
                     />

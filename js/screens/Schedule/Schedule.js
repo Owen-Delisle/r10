@@ -2,32 +2,10 @@ import React, { Component } from "react";
 import { Text, View, TouchableOpacity, SectionList } from "react-native";
 import moment from "moment";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import styles from "../../config/faves-schedule-styles";
+import styles from "./styles";
 import PropTypes from "prop-types";
 
 export default class Schedule extends Component {
-  constructor() {
-    super();
-    this.data = [];
-    this.state = {
-      loading: false,
-      data: []
-    };
-  }
-
-  componentDidMount() {
-    const data = this.props.data.allSessions
-      .reduce((acc, curr) => {
-        const timeExists = acc.find(x => x.title === curr.startTime);
-        timeExists
-          ? timeExists.data.push(curr)
-          : acc.push({ title: curr.startTime, data: [curr] });
-        return acc;
-      }, [])
-      .sort((a, b) => a.title - b.title);
-    this.setState({ data: data });
-  }
-
   onPress = item => {
     this.props.navigation.navigate("Session", {
       session: item
@@ -60,7 +38,7 @@ export default class Schedule extends Component {
             {moment(section.title).format("h:mm a")}
           </Text>
         )}
-        sections={this.state.data}
+        sections={this.props.data}
         keyExtractor={(item, index) => item + index}
       />
     );
